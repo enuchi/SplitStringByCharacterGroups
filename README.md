@@ -49,3 +49,7 @@ Try with unknown characters:
 	//set ignore unknown character groups param to false:
 	var split_array = split.split_into_groups("BEAzzzqurGG#Abvv44B",sorted,false);
 	// [ 'B', 'E', 'A', undefined, 'G', 'G#', 'Ab', undefined, 'B' ]
+
+## Support
+
+ES6+
