@@ -1,6 +1,6 @@
 {
   "name": "splitstringbycharactergroups",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "split up a string by defined character groups. useful for creating custom regex tools.",
   "main": "index.js",
   "scripts": {
