@@ -1,0 +1,27 @@
+{
+  "name": "splitstringbycharactergroups",
+  "version": "1.0.0",
+  "description": "split up a string by defined character groups. useful for creating custom regex tools.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/enuchi/SplitStringByCharacterGroups.git"
+  },
+  "keywords": [
+    "split",
+    "string",
+    "character",
+    "groups",
+    "regex",
+    "regexp"
+  ],
+  "author": "Elisha Nuchi <fingrgallery@gmail.com> (github.com/enuchi)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/enuchi/SplitStringByCharacterGroups/issues"
+  },
+  "homepage": "https://github.com/enuchi/SplitStringByCharacterGroups#readme"
+}
