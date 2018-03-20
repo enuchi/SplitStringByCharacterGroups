@@ -2,14 +2,19 @@
 
 splits a string by character groups that you define
 
-var split = require('SplitStringByCharacterGroups')
+## Installation
 
-var character_groups = ["A","B","C","D","E","F","G","Ab","Bb","Cb","Db","Eb","Fb","Gb","A#","B#","C#","D#","E#","F#","G#"];
+	`npm install @elishanuchi/splitstringbycharactergroups`
 
-var sorted = split.sorted_character_groups(character_groups);
+## Usage
+	var split = require('SplitStringByCharacterGroups')
 
-var split_array = split.split_into_groups("BEAGG#AbB",sorted)
+	var character_groups = ["A","B","C","D","E","F","G","Ab","Bb","Cb","Db","Eb","Fb","Gb","A#","B#","C#","D#","E#","F#","G#"];
 
-console.log(split_array);
+	var sorted = split.sorted_character_groups(character_groups);
 
-//returns  ['B', 'E', 'A', 'G', 'G#', 'Ab', 'B' ]
+	var split_array = split.split_into_groups("BEAGG#AbB",sorted)
+
+	console.log(split_array);
+
+Should return  ['B', 'E', 'A', 'G', 'G#', 'Ab', 'B' ]
