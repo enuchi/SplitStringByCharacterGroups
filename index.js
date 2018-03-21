@@ -9,15 +9,15 @@ exports.sorted_character_groups = function(array) {
 
 
 //splits string into array with character group elements
-split_into_groups_function = function(string_input,character_array,ignore_extraneous_characters) {
-  
+split_into_groups_function = function(string_input,character_array,ignore_extraneous_characters,split_extraneous_characters) {
+
   //base case, string is just 1 element which is in the character_array
   if (character_array.indexOf(string_input) > -1) {
     return string_input;
 
-  } else {
-    //test each character group
-    for (var i = 0; i<character_array.length; i++) {
+  }
+  //test each character group
+  for (var i = 0; i<character_array.length; i++) {
       //match is index in 
       var match = string_input.indexOf(character_array[i]);
       if (match > -1) {
@@ -32,31 +32,35 @@ split_into_groups_function = function(string_input,character_array,ignore_extran
         //collapse multi-dimensional arrays with spread operator (ES6)
         if (A.length === 0) {
           return [].concat(...[B,
-                               split_into_groups_function(C,character_array,ignore_extraneous_characters)]);
+           split_into_groups_function(C,character_array,ignore_extraneous_characters,split_extraneous_characters)]);
         } else if (C.length === 0) {
-          return [].concat(...[split_into_groups_function(A,character_array,ignore_extraneous_characters),
-                               B]);
+          return [].concat(...[split_into_groups_function(A,character_array,ignore_extraneous_characters,split_extraneous_characters),
+           B]);
         } else {
-          return [].concat(...[split_into_groups_function(A,character_array,ignore_extraneous_characters),
-                               B,
-                               split_into_groups_function(C,character_array,ignore_extraneous_characters)]);
+          return [].concat(...[split_into_groups_function(A,character_array,ignore_extraneous_characters,split_extraneous_characters),
+           B,
+           split_into_groups_function(C,character_array,ignore_extraneous_characters,split_extraneous_characters)]);
         };
       };
     };
     //characters not in character_array are returned anyway
-    if (ignore_extraneous_characters) {return string_input};
+    if (ignore_extraneous_characters && split_extraneous_characters) {return string_input.split('')}
+      else if (ignore_extraneous_characters && !(split_extraneous_characters)) {return string_input};
   };
-};
 
-exports.split_into_groups = function(string_input,character_array,ignore_extraneous_characters = true) {
-  if (typeof string_input != 'string') {
-    return "error: string_input not a string";
+
+  exports.split_into_groups = function(string_input,character_array,ignore_extraneous_characters = true, split_extraneous_characters = false) {
+    if (typeof string_input != 'string') {
+      return "error: string_input not a string";
+    };
+    if (!Array.isArray(character_array)) {
+      return "error: character_array not an array";
+    };
+    if (typeof ignore_extraneous_characters != 'boolean') {
+      return "error: ignore_extraneous_characters not a boolean";
+    };
+    if (typeof split_extraneous_characters != 'boolean') {
+      return "error: split_extraneous_characters not a boolean";
+    };
+    return split_into_groups_function(string_input,character_array,ignore_extraneous_characters,split_extraneous_characters);
   };
-  if (!Array.isArray(character_array)) {
-    return "error: character_array not an array";
-  };
-  if (typeof ignore_extraneous_characters != 'boolean') {
-    return "error: ignore_extraneous_characters not a boolean";
-  };
-  return split_into_groups_function(string_input,character_array,ignore_extraneous_characters);
-};
