@@ -4,7 +4,7 @@ Splits a string by character groups that you define. Useful for custom regex man
 
 Helps you split:
 
-`'BEAGG#AbB'` into `[ 'B', 'E', 'A', 'G', 'G#', 'A', 'b', 'B' ]`
+`'BEAGG#AbB'` into `[ 'B', 'E', 'A', 'G', 'G#', 'Ab', 'B' ]`
 
 `'daʊnloʊd'` into `[ 'd', 'aʊ', 'n', 'l', 'oʊ', 'd' ]`
 
