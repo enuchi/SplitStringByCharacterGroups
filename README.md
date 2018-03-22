@@ -17,7 +17,7 @@ Helps you split:
 
 ### load the module
 
-	var split = require('SplitStringByCharacterGroups');
+	var split = require('splitstringbycharactergroups');
 
 ### call `split_into_groups`
 
@@ -26,11 +26,11 @@ Helps you split:
 	var result = split.split_into_groups(string_to_split,character_group_array)
 	//result should be [ 'a', 'bc', 'd' ]
 
-`split_into_groups` method takes 3 params:
+`split_into_groups` method takes 4 params:
 1. the `string_to_split`
 2. `character_group_array`, an ordered array of character groups. will usually want longest first. 
-3. [optional boolean] `ignore_unknown_characters`. defaults to true/ignore. set false to return as unidentified chars as undefined 
-4. [optional boolean] `split_extraneous_characters`. defaults to false/doesn't split. set to true to split unidentified substrings into individual elementss of single char length.
+3. [optional/boolean] `ignore_unknown_characters`? defaults to true/ignore. set false to return unidentified chars as undefined. see examples. 
+4. [optional/boolean] `split_extraneous_characters`?. defaults to false/doesn't split. set to true to split unidentified substrings into individual elements of single char length. see examples.
 
 
 ### call `sorted_character_groups` on an array to return array sorted by character length and reversed alphabetically
@@ -77,6 +77,7 @@ Set both `ignore_unknown_characters` and `split_extraneous_characters` params to
 ## Support
 
 ES6+
+Node 6+
 
 ## To do
 
