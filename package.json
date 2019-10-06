@@ -2,9 +2,10 @@
   "name": "splitstringbycharactergroups",
   "version": "1.0.4",
   "description": "split up a string by defined character groups. useful for creating custom regex tools.",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test.js",
+    "build": "babel index.js --out-dir dist"
   },
   "repository": {
     "type": "git",
@@ -23,5 +24,10 @@
   "bugs": {
     "url": "https://github.com/enuchi/SplitStringByCharacterGroups/issues"
   },
-  "homepage": "https://github.com/enuchi/SplitStringByCharacterGroups#readme"
+  "homepage": "https://github.com/enuchi/SplitStringByCharacterGroups#readme",
+  "devDependencies": {
+    "@babel/core": "^7.6.2",
+    "@babel/node": "^7.6.2",
+    "@babel/preset-env": "^7.6.2"
+  }
 }

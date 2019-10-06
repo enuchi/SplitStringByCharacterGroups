@@ -1,7 +1,17 @@
-var s = require('./index.js');
+const assert = require('assert');
 
-var character_groups = ['eɪ','aɪ','aʊ','oʊ','ɔɪ'];
+const split = require('./dist/index.js');
 
-var split_array = s.split_into_groups("daʊnloʊd",character_groups,true,true)
+const input = 'daʊnloʊd';
+const characterGroups = ['eɪ','aɪ','aʊ','oʊ','ɔɪ'];
+const ignoreExtraneousCharacters = true;
+const splitExtraneousCharacters = false;
 
-console.log(split_array);
+const result = split.splitStringByCharacterGroups(
+  input, characterGroups, {ignoreExtraneousCharacters, splitExtraneousCharacters}
+)
+
+const expectedResult = [ 'd', 'aʊ', 'n', 'l', 'oʊ', 'd' ];
+
+assert.deepEqual(result, expectedResult);
+console.log(`success! ${result} is equal to ${expectedResult}`)
